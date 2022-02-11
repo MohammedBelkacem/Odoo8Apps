@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="import_invoice_line_wizard_view_td" model="ir.ui.view">
+            <field name="name">import.invoice.line.wizard.dt.form</field>
+            <field name="model">import.invoice.line.wizard</field>
+            <field name="inherit_id" ref="purchase_landed_cost.import_invoice_line_wizard_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice']" position="replace">
+                     <field name="invoice" context="{'purchase_cost_distribution':1}" filter_domain="['|',('dt','ilike',self),('name','ilike',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

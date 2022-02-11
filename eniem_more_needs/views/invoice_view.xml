@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="invoice_supplier_form" model="ir.ui.view">
+            <field name="name">account.invoice</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='check_total']" position="after">
+                    <field name="dt"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_account_invoice_dt_filter" model="ir.ui.view">
+            <field name="name">account.invoice</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter" />
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//field[@name='number']"  position="after">
+                     <field name="dt" select="True"/>
+                </xpath>
+
+               <!--<xpath expr="//field[@name='number']"  position="replace">
+                <field name="number" string="Invoice" filter_domain="['|','|','|',('dt','ilike',self), ('number','ilike',self), ('origin','ilike',self), ('supplier_invoice_number', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+               </xpath>-->
+                </field>
+            </record>
+    </data>
+</openerp>

@@ -1,0 +1,1629 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* eniem_pdp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-23 13:52+0000\n"
+"PO-Revision-Date: 2022-01-23 13:52+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: eniem_pdp
+#: selection:dai,exercice:0
+msgid "2021"
+msgstr "2021"
+
+#. module: eniem_pdp
+#: selection:dai,exercice:0
+msgid "2022"
+msgstr "2022"
+
+#. module: eniem_pdp
+#: selection:dai,exercice:0
+msgid "2023"
+msgstr "2023"
+
+#. module: eniem_pdp
+#: selection:dai,exercice:0
+msgid "2024"
+msgstr "2024"
+
+#. module: eniem_pdp
+#: selection:dai,exercice:0
+msgid "2025"
+msgstr "2025"
+
+#. module: eniem_pdp
+#: selection:dai,exercice:0
+msgid "2026"
+msgstr "2026"
+
+#. module: eniem_pdp
+#: selection:dai,exercice:0
+msgid "2027"
+msgstr "2027"
+
+#. module: eniem_pdp
+#: model:ir.actions.act_window,help:eniem_pdp.cbn_act
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"               creer le premier CBN\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"               creer le premier CBN\n"
+"              </p>\n"
+"            "
+
+#. module: eniem_pdp
+#: model:ir.actions.act_window,help:eniem_pdp.pdp_act
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"               creer le premier PDP\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"               creer le premier PDP\n"
+"              </p>\n"
+"            "
+
+#. module: eniem_pdp
+#: model:ir.actions.act_window,help:eniem_pdp.dai2_act
+#: model:ir.actions.act_window,help:eniem_pdp.dai3_act
+#: model:ir.actions.act_window,help:eniem_pdp.dai4_act
+#: model:ir.actions.act_window,help:eniem_pdp.dai_act
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"               créer la première dai\n"
+"              </p>\n"
+"            "
+msgstr "<p class=\"oe_view_nocontent_create\">\n"
+"               créer la première dai\n"
+"              </p>\n"
+"            "
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: field:cbn,line_definitive_ids:0
+msgid "A approvisionner"
+msgstr "A approvisionner"
+
+#. module: eniem_pdp
+#: field:cbn.definitive.common,purchaser_id:0
+#: view:dai:eniem_pdp.dai_filter_search
+#: view:dai:eniem_pdp.dai_form
+#: field:dai,purchaser_id:0
+msgid "Acheteur"
+msgstr "Acheteur"
+
+#. module: eniem_pdp
+#: view:dai.purchaser:eniem_pdp.view_dai_purchaser
+msgid "Affecter cette ligne"
+msgstr "Affecter cette ligne"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Affecter cette ligne à un autre acheteur"
+msgstr "Affecter cette ligne à un autre acheteur"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:dai:eniem_pdp.dai_form
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Annuler"
+msgstr "Annuler"
+
+#. module: eniem_pdp
+#: selection:cbn,state:0
+#: selection:dai.line,state:0
+#: selection:pdp,state:0
+msgid "Annulé"
+msgstr "Annulé"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Annulée"
+msgstr "Annulée"
+
+#. module: eniem_pdp
+#: field:pdp.line,august:0
+#: help:pdp.line,august:0
+msgid "Aout"
+msgstr "Aout"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Août"
+msgstr "Août"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Approbation"
+msgstr "Approbation"
+
+#. module: eniem_pdp
+#: model:res.groups,comment:eniem_pdp.pdp_pdg
+msgid "Approuver les DAIS"
+msgstr "Approuver les DAIS"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Approuvée"
+msgstr "Approuvée"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+msgid "Approuvées"
+msgstr "Approuvées"
+
+#. module: eniem_pdp
+#: selection:dai,type_demande:0
+msgid "Automatique"
+msgstr "Automatique"
+
+#. module: eniem_pdp
+#: field:pdp.line,april:0
+#: help:pdp.line,april:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Avril"
+msgstr "Avril"
+
+#. module: eniem_pdp
+#: field:pdp,line_brut_grouped_ids:0
+msgid "Besoin en MP groupé"
+msgstr "Besoin en MP groupé"
+
+#. module: eniem_pdp
+#: model:ir.ui.menu,name:eniem_pdp.cbn_menu
+msgid "Besoins nets"
+msgstr "Besoins nets"
+
+#. module: eniem_pdp
+#: field:pdp,line_brut_ids:0
+msgid "Besoins éclatés en MP"
+msgstr "Besoins éclatés en MP"
+
+#. module: eniem_pdp
+#: selection:cbn,state:0
+#: selection:dai,state:0
+#: selection:dai.line,state:0
+#: view:pdp:eniem_pdp.pdp_form
+#: selection:pdp,state:0
+msgid "Brouillon"
+msgstr "Brouillon"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:cbn:eniem_pdp.cbn_tree
+#: field:cbn.definitive,cbn_id:0
+#: field:cbn.definitive.common,cbn_id:0
+#: field:cbn.line,cbn_id:0
+#: field:cbn.raw.bom,cbn_id:0
+#: field:cbn.recept,cbn_id:0
+#: field:cbn.stock,cbn_id:0
+#: view:dai:eniem_pdp.dai_form
+#: field:dai,cbn_id:0
+#: model:ir.actions.act_window,name:eniem_pdp.cbn_act
+#: field:pdp,cbn_id:0
+msgid "CBN"
+msgstr "Calcul des besoin nets"
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/cbn.py:92
+#, python-format
+msgid "CBN created"
+msgstr "CBN created"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_cbn
+msgid "Calcul des besoin nets"
+msgstr "Calcul des besoin nets"
+
+#. module: eniem_pdp
+#: model:ir.ui.menu,name:eniem_pdp.cbn_menu1
+msgid "Calcul des besoins nets"
+msgstr "Calcul des besoins nets"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Calculer le cout"
+msgstr "Calculer le cout"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "Calculer le stock disponible"
+msgstr "Calculer le stock disponible"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Calculer les besoins bruts"
+msgstr "Calculer les besoins bruts"
+
+#. module: eniem_pdp
+#: view:dai.purchaser:eniem_pdp.view_dai_purchaser
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: eniem_pdp
+#: field:cbn.definitive.common,categ_id:0
+msgid "Catégorie"
+msgstr "Catégorie"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+#: field:dai,categ_id:0
+#: help:dai,categ_id:0
+msgid "Catégorie de produit"
+msgstr "Catégorie de produit"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "Charger les encours de réception"
+msgstr "Charger les encours de réception"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "Charger les quantité définitives"
+msgstr "Charger les quantité définitives"
+
+#. module: eniem_pdp
+#: model:res.groups,name:eniem_pdp.pdp_departement
+msgid "Chef de département"
+msgstr "Chef de département"
+
+#. module: eniem_pdp
+#: model:res.groups,name:eniem_pdp.pdp_section
+msgid "Chef de section"
+msgstr "Chef de section"
+
+#. module: eniem_pdp
+#: model:res.groups,name:eniem_pdp.pdp_service
+msgid "Chef de sevice"
+msgstr "Chef de sevice"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Code prod"
+msgstr "Code prod"
+
+#. module: eniem_pdp
+#: field:cbn.recept,commanded:0
+msgid "Commandée"
+msgstr "Commandée"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_pdp_raw_bom_eclate
+msgid "Composants des SFs"
+msgstr "Composants des SFs"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_pdp_raw_bom_grouped
+msgid "Composants des SFs groupes"
+msgstr "Composants des SFs groupes"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Confirmer"
+msgstr "Confirmer"
+
+#. module: eniem_pdp
+#: selection:pdp,state:0
+msgid "Confirmé"
+msgstr "Confirmé"
+
+#. module: eniem_pdp
+#: selection:cbn,state:0
+msgid "Confirmée"
+msgstr "Confirmée"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+#: field:dai.line,rfq_id:0
+msgid "Consultation"
+msgstr "Consultation"
+
+#. module: eniem_pdp
+#: field:cbn,create_uid:0
+#: field:cbn.definitive,create_uid:0
+#: field:cbn.definitive.common,create_uid:0
+#: field:cbn.line,create_uid:0
+#: field:cbn.raw.bom,create_uid:0
+#: field:cbn.recept,create_uid:0
+#: field:cbn.stock,create_uid:0
+#: field:dai,create_uid:0
+#: field:dai.line,create_uid:0
+#: field:dai.purchaser,create_uid:0
+#: field:pdp,create_uid:0
+#: field:pdp.line,create_uid:0
+#: field:pdp.raw,create_uid:0
+#: field:pdp.raw.bom,create_uid:0
+#: field:pdp.raw.bom.eclate,create_uid:0
+#: field:pdp.raw.bom.grouped,create_uid:0
+#: field:pdp.raw.group,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: eniem_pdp
+#: field:cbn,create_date:0
+#: field:cbn.definitive,create_date:0
+#: field:cbn.definitive.common,create_date:0
+#: field:cbn.line,create_date:0
+#: field:cbn.raw.bom,create_date:0
+#: field:cbn.recept,create_date:0
+#: field:cbn.stock,create_date:0
+#: field:dai,create_date:0
+#: field:dai.line,create_date:0
+#: field:dai.purchaser,create_date:0
+#: field:pdp,create_date:0
+#: field:pdp.line,create_date:0
+#: field:pdp.raw,create_date:0
+#: field:pdp.raw.bom,create_date:0
+#: field:pdp.raw.bom.eclate,create_date:0
+#: field:pdp.raw.bom.grouped,create_date:0
+#: field:pdp.raw.group,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Créé par"
+msgstr "Créé par"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+#: view:dai:eniem_pdp.dai_tree
+#: field:dai,name:0
+#: field:dai.line,dai_id:0
+#: field:dai.purchaser,dai_id:0
+#: model:ir.model,name:eniem_pdp.model_dai_purchaser
+msgid "DAI"
+msgstr "DAI"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:dai:eniem_pdp.dai_form
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Date de création"
+msgstr "Date de création"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Date de demande"
+msgstr "Date de demande"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+#: view:pdp:eniem_pdp.view_pdp_filter
+#: field:pdp,start_date:0
+msgid "Date de début"
+msgstr "Date de début"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+#: field:pdp,end_date:0
+msgid "Date de fin"
+msgstr "Date de fin"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:dai:eniem_pdp.dai_form
+#: view:pdp:eniem_pdp.pdp_form
+#: view:website:eniem_pdp.report_dai_document
+msgid "Date de modification"
+msgstr "Date de modification"
+
+#. module: eniem_pdp
+#: help:cbn,message_last_post:0
+#: help:dai,message_last_post:0
+#: help:pdp,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_pdp_besoin__document
+#: view:website:eniem_pdp.report_pdp_document
+msgid "De:"
+msgstr "De:"
+
+#. module: eniem_pdp
+#: help:pdp.line,december:0
+msgid "Decembre"
+msgstr "Decembre"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_cbn_definitive
+msgid "Definitive CBN"
+msgstr "Definitive CBN"
+
+#. module: eniem_pdp
+#: model:ir.actions.act_window,name:eniem_pdp.dai2_act
+#: model:ir.actions.act_window,name:eniem_pdp.dai3_act
+#: model:ir.actions.act_window,name:eniem_pdp.dai4_act
+#: model:ir.actions.act_window,name:eniem_pdp.dai_act
+#: model:ir.model,name:eniem_pdp.model_dai
+msgid "Demande d'achat"
+msgstr "Demande d'achat"
+
+#. module: eniem_pdp
+#: model:ir.actions.report.xml,name:eniem_pdp.report_dai_view
+#: model:ir.ui.menu,name:eniem_pdp.dai_menu
+#: model:ir.ui.menu,name:eniem_pdp.dai_menu1
+#: model:ir.ui.menu,name:eniem_pdp.dai_menu2
+#: model:ir.ui.menu,name:eniem_pdp.dai_menu3
+msgid "Demande d'achat interne"
+msgstr "Demande d'achat interne"
+
+#. module: eniem_pdp
+#: model:ir.ui.menu,name:eniem_pdp.dai_menu4
+msgid "Demande d'achat interne annulée"
+msgstr "Demande d'achat interne annulée"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+#: view:dai:eniem_pdp.dai_form
+#: view:dai:eniem_pdp.dai_tree
+#: field:dai,request_user_id:0
+msgid "Demandeur"
+msgstr "Demandeur"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Demandeur:"
+msgstr "Demandeur:"
+
+#. module: eniem_pdp
+#: model:res.groups,name:eniem_pdp.pdp_pdg
+msgid "Directeur"
+msgstr "Directeur"
+
+#. module: eniem_pdp
+#: field:cbn,display_name:0
+#: field:cbn.definitive,display_name:0
+#: field:cbn.definitive.common,display_name:0
+#: field:cbn.line,display_name:0
+#: field:cbn.raw.bom,display_name:0
+#: field:cbn.recept,display_name:0
+#: field:cbn.stock,display_name:0
+#: field:dai,display_name:0
+#: field:dai.line,display_name:0
+#: field:dai.purchaser,display_name:0
+#: field:pdp,display_name:0
+#: field:pdp.line,display_name:0
+#: field:pdp.raw,display_name:0
+#: field:pdp.raw.bom,display_name:0
+#: field:pdp.raw.bom.eclate,display_name:0
+#: field:pdp.raw.bom.grouped,display_name:0
+#: field:pdp.raw.group,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: eniem_pdp
+#: field:cbn.raw.bom,disponible:0
+#: field:pdp.raw.bom,disponible:0
+#: field:pdp.raw.bom.eclate,disponible:0
+#: field:pdp.raw.bom.grouped,disponible:0
+msgid "Disponible"
+msgstr "Disponible"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "Done"
+msgstr "Done"
+
+#. module: eniem_pdp
+#: field:cbn.recept,douane:0
+msgid "Douane"
+msgstr "Douane"
+
+#. module: eniem_pdp
+#: field:pdp.line,december:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Décembre"
+msgstr "Décembre"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Eclater le Stock des semis finis"
+msgstr "Eclater le Stock des semis finis"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Edition de la demande d'achat interne (D.A.I):"
+msgstr "Edition de la demande d'achat interne (D.A.I):"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "En arrivage"
+msgstr "En arrivage"
+
+#. module: eniem_pdp
+#: field:cbn.definitive,total_reception:0
+#: field:cbn.definitive.common,total_reception:0
+msgid "En reception"
+msgstr "En reception"
+
+#. module: eniem_pdp
+#: field:cbn,line_recept_ids:0
+msgid "En réception"
+msgstr "En réception"
+
+#. module: eniem_pdp
+#: field:cbn.definitive,stock_available:0
+#: field:cbn.definitive.common,stock_available:0
+msgid "En stock"
+msgstr "En stock"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+msgid "En traitement"
+msgstr "En traitement"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Encours de traitement"
+msgstr "Encours de traitement"
+
+#. module: eniem_pdp
+#: model:res.groups,comment:eniem_pdp.pdp_departement
+msgid "Envoyer  les DAIS au directeur"
+msgstr "Envoyer  les DAIS au directeur"
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/cbn.py:200
+#, python-format
+msgid "Error!"
+msgstr "Error!"
+
+#. module: eniem_pdp
+#: field:product.product,is_shared:0
+msgid "Est-t-il commun ?"
+msgstr "Est-t-il commun ?"
+
+#. module: eniem_pdp
+#: model:res.groups,comment:eniem_pdp.pdp_appro
+msgid "Etablier le PDP, Calculer le CBDN, generer les DAIS"
+msgstr "Etablier le PDP, Calculer le CBDN, generer les DAIS"
+
+#. module: eniem_pdp
+#: field:cbn,state:0
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "Etat"
+msgstr "Etat"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+#: field:dai,exercice:0
+msgid "Exercice"
+msgstr "Exercice"
+
+#. module: eniem_pdp
+#: field:pdp.raw,factor:0
+msgid "Facteur"
+msgstr "Facteur"
+
+#. module: eniem_pdp
+#: help:pdp.raw,factor:0
+msgid "Factor"
+msgstr "Factor"
+
+#. module: eniem_pdp
+#: field:pdp.line,february:0
+#: help:pdp.line,february:0
+msgid "Fevrier"
+msgstr "Fevrier"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "Figer"
+msgstr "Figer"
+
+#. module: eniem_pdp
+#: field:cbn,message_follower_ids:0
+#: field:dai,message_follower_ids:0
+#: field:pdp,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Février"
+msgstr "Février"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Geler"
+msgstr "Geler"
+
+#. module: eniem_pdp
+#: selection:cbn,state:0
+#: selection:pdp,state:0
+msgid "Gelé"
+msgstr "Gelé"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Grouper le stock MP des SFs"
+msgstr "Grouper le stock MP des SFs"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Grouper les besoins bruts"
+msgstr "Grouper les besoins bruts"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "Groupé par"
+msgstr "Groupé par"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Générer la consultation"
+msgstr "Générer la consultation"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Générer le CBN"
+msgstr "Générer le CBN"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "Générer les DAIs"
+msgstr "Générer les DAIs"
+
+#. module: eniem_pdp
+#: help:cbn,message_summary:0
+#: help:dai,message_summary:0
+#: help:pdp,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: eniem_pdp
+#: field:cbn,id:0
+#: field:cbn.definitive,id:0
+#: field:cbn.definitive.common,id:0
+#: field:cbn.line,id:0
+#: field:cbn.raw.bom,id:0
+#: field:cbn.recept,id:0
+#: field:cbn.stock,id:0
+#: field:dai,id:0
+#: field:dai.line,id:0
+#: field:dai.purchaser,id:0
+#: field:pdp,id:0
+#: field:pdp.line,id:0
+#: field:pdp.raw,id:0
+#: field:pdp.raw.bom,id:0
+#: field:pdp.raw.bom.eclate,id:0
+#: field:pdp.raw.bom.grouped,id:0
+#: field:pdp.raw.group,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: eniem_pdp
+#: help:cbn,message_unread:0
+#: help:dai,message_unread:0
+#: help:pdp,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/pdp.py:98
+#, python-format
+msgid "In order to delete a Plans, you must cancel it before!"
+msgstr "In order to delete a Plans, you must cancel it before!"
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/cbn.py:79
+#: code:addons/eniem_pdp/models/pdp.py:98
+#: code:addons/eniem_pdp/models/pdp.py:459
+#: code:addons/eniem_pdp/models/purchase_requisition_partners.py:102
+#, python-format
+msgid "Invalid Action!"
+msgstr "Invalid Action!"
+
+#. module: eniem_pdp
+#: field:cbn,message_is_follower:0
+#: field:dai,message_is_follower:0
+#: field:pdp,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: eniem_pdp
+#: field:pdp.line,january:0
+#: help:pdp.line,january:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Janvier"
+msgstr "Janvier"
+
+#. module: eniem_pdp
+#: field:pdp.line,july:0
+#: help:pdp.line,july:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Juillet"
+msgstr "Juillet"
+
+#. module: eniem_pdp
+#: field:pdp.line,june:0
+#: help:pdp.line,june:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Juin"
+msgstr "Juin"
+
+#. module: eniem_pdp
+#: field:product.product,kit_product_ids:0
+msgid "Kit product ids"
+msgstr "Kit product ids"
+
+#. module: eniem_pdp
+#: field:cbn,message_last_post:0
+#: field:dai,message_last_post:0
+#: field:pdp,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: eniem_pdp
+#: field:cbn,__last_update:0
+#: field:cbn.definitive,__last_update:0
+#: field:cbn.definitive.common,__last_update:0
+#: field:cbn.line,__last_update:0
+#: field:cbn.raw.bom,__last_update:0
+#: field:cbn.recept,__last_update:0
+#: field:cbn.stock,__last_update:0
+#: field:dai,__last_update:0
+#: field:dai.line,__last_update:0
+#: field:dai.purchaser,__last_update:0
+#: field:pdp,__last_update:0
+#: field:pdp.line,__last_update:0
+#: field:pdp.raw,__last_update:0
+#: field:pdp.raw.bom,__last_update:0
+#: field:pdp.raw.bom.eclate,__last_update:0
+#: field:pdp.raw.bom.grouped,__last_update:0
+#: field:pdp.raw.group,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: eniem_pdp
+#: field:cbn,write_uid:0
+#: field:cbn.definitive,write_uid:0
+#: field:cbn.definitive.common,write_uid:0
+#: field:cbn.line,write_uid:0
+#: field:cbn.raw.bom,write_uid:0
+#: field:cbn.recept,write_uid:0
+#: field:cbn.stock,write_uid:0
+#: field:dai,write_uid:0
+#: field:dai.line,write_uid:0
+#: field:dai.purchaser,write_uid:0
+#: field:pdp,write_uid:0
+#: field:pdp.line,write_uid:0
+#: field:pdp.raw,write_uid:0
+#: field:pdp.raw.bom,write_uid:0
+#: field:pdp.raw.bom.eclate,write_uid:0
+#: field:pdp.raw.bom.grouped,write_uid:0
+#: field:pdp.raw.group,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: eniem_pdp
+#: field:cbn,write_date:0
+#: field:cbn.definitive,write_date:0
+#: field:cbn.definitive.common,write_date:0
+#: field:cbn.line,write_date:0
+#: field:cbn.raw.bom,write_date:0
+#: field:cbn.recept,write_date:0
+#: field:cbn.stock,write_date:0
+#: field:dai,write_date:0
+#: field:dai.line,write_date:0
+#: field:dai.purchaser,write_date:0
+#: field:pdp,write_date:0
+#: field:pdp.line,write_date:0
+#: field:pdp.raw,write_date:0
+#: field:pdp.raw.bom,write_date:0
+#: field:pdp.raw.bom.eclate,write_date:0
+#: field:pdp.raw.bom.grouped,write_date:0
+#: field:pdp.raw.group,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/pdp.py:459
+#, python-format
+msgid "Le CBNa été déjà généré."
+msgstr "Le CBNa été déjà généré."
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Le chef de département"
+msgstr "Le chef de département"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Le chef de section"
+msgstr "Le chef de section"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Le chef de service"
+msgstr "Le chef de service"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Le directeur"
+msgstr "Le directeur"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "Les lignes du CBN"
+msgstr "Les lignes du CBN"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Les lignes du DAI"
+msgstr "Les lignes du DAI"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_pdp_raw
+msgid "Lignes de MP"
+msgstr "Lignes de MP"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_pdp_raw_group
+msgid "Lignes de MP groupees"
+msgstr "Lignes de MP groupees"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_dai_line
+msgid "Lignes de la DAI"
+msgstr "Lignes de la DAI"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_pdp_line
+msgid "Lignes du PDP"
+msgstr "Lignes du PDP"
+
+#. module: eniem_pdp
+#: model:ir.actions.report.xml,name:eniem_pdp.report_pdp_besoin__view
+msgid "Liste des besoins"
+msgstr "Liste des besoins"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+#: view:website:eniem_pdp.report_pdp_besoin__document
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Liste des produits:"
+msgstr "Liste des produits:"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "MP de base"
+msgstr "MP de base"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "MP des SFs groupée"
+msgstr "MP des SFs groupée"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "MP des SFs groupées"
+msgstr "MP des SFs groupées"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "MP groupée"
+msgstr "MP groupée"
+
+#. module: eniem_pdp
+#: field:pdp.line,mai:0
+#: help:pdp.line,mai:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Mai"
+msgstr "Mai"
+
+#. module: eniem_pdp
+#: selection:dai,type_demande:0
+msgid "Manuelle"
+msgstr "Manuelle"
+
+#. module: eniem_pdp
+#: field:pdp.line,march:0
+#: help:pdp.line,march:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Mars"
+msgstr "Mars"
+
+#. module: eniem_pdp
+#: field:cbn,message_ids:0
+#: field:dai,message_ids:0
+#: field:pdp,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: eniem_pdp
+#: help:cbn,message_ids:0
+#: help:dai,message_ids:0
+#: help:pdp,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Modifié par"
+msgstr "Modifié par"
+
+#. module: eniem_pdp
+#: field:cbn.line,needed_quantity:0
+msgid "Needed Quantity"
+msgstr "Needed Quantity"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "New Mail"
+msgstr "New Mail"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Nom prod"
+msgstr "Nom prod"
+
+#. module: eniem_pdp
+#: field:pdp.raw,parent_product_id:0
+msgid "Nomenclature"
+msgstr "Nomenclature"
+
+#. module: eniem_pdp
+#: field:pdp.raw.group,parent_product_id:0
+#: view:website:eniem_pdp.report_pdp_besoin__document
+msgid "Nomenclatures"
+msgstr "Nomenclatures"
+
+#. module: eniem_pdp
+#: selection:dai.line,state2:0
+msgid "Non Traitée"
+msgstr "Non Traitée"
+
+#. module: eniem_pdp
+#: field:pdp.line,november:0
+#: help:pdp.line,november:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Novembre"
+msgstr "Novembre"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Numéro"
+msgstr "Numéro"
+
+#. module: eniem_pdp
+#: field:dai,dai_object:0
+msgid "Objet de l'achat"
+msgstr "Objet de l'achat"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Objet de la DAI:"
+msgstr "Objet de la DAI:"
+
+#. module: eniem_pdp
+#: field:pdp.line,october:0
+#: help:pdp.line,october:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Octobre"
+msgstr "Octobre"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+#: field:dai,manual_cbn:0
+msgid "Origine de la demande"
+msgstr "Origine de la demande"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: field:cbn,pdp_id:0
+#: model:ir.actions.act_window,name:eniem_pdp.pdp_act
+#: model:ir.module.category,description:eniem_pdp.pdp
+#: model:ir.module.category,name:eniem_pdp.pdp
+#: view:pdp:eniem_pdp.pdp_form
+#: view:pdp:eniem_pdp.pdp_tree
+#: field:pdp.line,pdp_id:0
+#: field:pdp.raw,pdp_id:0
+#: field:pdp.raw.bom,pdp_id:0
+#: field:pdp.raw.bom.eclate,pdp_id:0
+#: field:pdp.raw.bom.grouped,pdp_id:0
+#: field:pdp.raw.group,pdp_id:0
+msgid "PDP"
+msgstr "PDP"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "PDP Lines"
+msgstr "PDP Lines"
+
+#. module: eniem_pdp
+#: model:ir.ui.menu,name:eniem_pdp.pga
+msgid "PGA"
+msgstr "PGA"
+
+#. module: eniem_pdp
+#: field:cbn,name:0
+#: field:pdp,name:0
+msgid "Plan"
+msgstr "Plan"
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/pdp.py:110
+#, python-format
+msgid "Plan created"
+msgstr "Plan created"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "Plan reference"
+msgstr "Plan reference"
+
+#. module: eniem_pdp
+#: model:ir.actions.report.xml,name:eniem_pdp.report_pdp_view
+msgid "Pland de production"
+msgstr "Pland de production"
+
+#. module: eniem_pdp
+#: field:pdp,request_user_id:0
+msgid "Planificateur"
+msgstr "Planificateur"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "Plans freezed"
+msgstr "Plans freezed"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_pdp
+msgid "Prevision de production"
+msgstr "Prevision de production"
+
+#. module: eniem_pdp
+#: field:pdp.line,cession_price:0
+msgid "Prix de cession"
+msgstr "Prix de cession"
+
+#. module: eniem_pdp
+#: field:pdp.line,total_cession_price:0
+msgid "Prix de cession total"
+msgstr "Prix de cession total"
+
+#. module: eniem_pdp
+#: field:cbn.line,product_id:0
+#: model:ir.model,name:eniem_pdp.model_product_product
+msgid "Product"
+msgstr "Article"
+
+#. module: eniem_pdp
+#: field:cbn.line,product_uom_id:0
+msgid "Product Unit of Measure"
+msgstr "Product Unit of Measure"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:dai:eniem_pdp.dai_form
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Products"
+msgstr "Products"
+
+#. module: eniem_pdp
+#: field:cbn.definitive,product_id:0
+#: field:cbn.definitive.common,product_id:0
+#: field:cbn.raw.bom,product_id:0
+#: field:cbn.recept,product_id:0
+#: field:cbn.stock,product_id:0
+#: field:dai.line,product_id:0
+#: field:pdp.line,product_id:0
+#: field:pdp.raw,product_id:0
+#: field:pdp.raw.bom,product_id:0
+#: field:pdp.raw.bom.eclate,product_id:0
+#: field:pdp.raw.bom.grouped,product_id:0
+#: field:pdp.raw.group,product_id:0
+msgid "Produit"
+msgstr "Produit"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: field:cbn,line_definitive_common_ids:0
+#: model:ir.model,name:eniem_pdp.model_cbn_definitive_common
+msgid "Produits communs"
+msgstr "Produits communs"
+
+#. module: eniem_pdp
+#: field:pdp,line_brut_bom_ids:0
+msgid "Produits intermediares"
+msgstr "Produits intermediares"
+
+#. module: eniem_pdp
+#: field:cbn,line_brut_bom_ids:0
+msgid "Produits intermédiare"
+msgstr "Produits intermédiare"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+#: field:pdp,line_ids:0
+msgid "Produits à fabriquer"
+msgstr "Produits à fabriquer"
+
+#. module: eniem_pdp
+#: selection:dai.line,state2:0
+msgid "Programmée"
+msgstr "Programmée"
+
+#. module: eniem_pdp
+#: model:ir.ui.menu,name:eniem_pdp.pdp_menu
+#: model:ir.ui.menu,name:eniem_pdp.pdp_menu1
+msgid "Prévision de production"
+msgstr "Prévision de production"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_purchase_requisition
+msgid "Purchase Requisition"
+msgstr "Appel d'offres"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_purchase_requisition_partner
+msgid "Purchase Requisition Partner"
+msgstr "Partenaires associés à la consultation"
+
+#. module: eniem_pdp
+#: field:cbn.definitive,needed_quantity:0
+msgid "Qty brute"
+msgstr "Qty brute"
+
+#. module: eniem_pdp
+#: field:cbn.definitive,total_to_supply:0
+msgid "Qty fournir"
+msgstr "Qty fournir"
+
+#. module: eniem_pdp
+#: field:cbn.definitive.common,total_to_supply:0
+msgid "Qty à fournir"
+msgstr "Qty à fournir"
+
+#. module: eniem_pdp
+#: field:dai.line,requested_quantity:0
+msgid "Quanitité demandée"
+msgstr "Quanitité demandée"
+
+#. module: eniem_pdp
+#: field:dai,line_ids:0
+msgid "Quantities"
+msgstr "Quantities"
+
+#. module: eniem_pdp
+#: help:pdp.raw,quantity:0
+msgid "Quantity"
+msgstr "Quantity"
+
+#. module: eniem_pdp
+#: field:pdp.raw,quantity:0
+#: view:website:eniem_pdp.report_pdp_besoin__document
+msgid "Quantité"
+msgstr "Quantité"
+
+#. module: eniem_pdp
+#: field:pdp.raw.group,total:0
+msgid "Quantité brute"
+msgstr "Quantité brute"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Quantité demandée"
+msgstr "Quantité demandée"
+
+#. module: eniem_pdp
+#: field:cbn.recept,stock_available:0
+#: field:cbn.stock,stock_available:0
+msgid "Quantité disponible"
+msgstr "Quantité disponible"
+
+#. module: eniem_pdp
+#: field:cbn,line_stock_ids:0
+msgid "Quantité en Stock"
+msgstr "Quantité en Stock"
+
+#. module: eniem_pdp
+#: field:dai.line,modified_quantity:0
+#: view:website:eniem_pdp.report_dai_document
+msgid "Quantité modifiée"
+msgstr "Quantité modifiée"
+
+#. module: eniem_pdp
+#: field:pdp.raw.group,total_net:0
+msgid "Quantité nette"
+msgstr "Quantité nette"
+
+#. module: eniem_pdp
+#: field:cbn.recept,needed_quantity:0
+#: field:cbn.stock,needed_quantity:0
+msgid "Quantité requise"
+msgstr "Quantité requise"
+
+#. module: eniem_pdp
+#: field:pdp.raw,total:0
+msgid "Quantité totale"
+msgstr "Quantité totale"
+
+#. module: eniem_pdp
+#: field:cbn,line_ids:0
+msgid "Quantités brutes"
+msgstr "Quantités brutes"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Raw Lines"
+msgstr "Raw Lines"
+
+#. module: eniem_pdp
+#: model:ir.model,name:eniem_pdp.model_cbn_line
+#: model:ir.model,name:eniem_pdp.model_cbn_recept
+#: model:ir.model,name:eniem_pdp.model_cbn_stock
+msgid "Raw of Material lines"
+msgstr "Lignes brutes de matière"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Reference/Name"
+msgstr "Reference/Name"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Remettre à zéro"
+msgstr "Remettre à zéro"
+
+#. module: eniem_pdp
+#: model:res.groups,name:eniem_pdp.pdp_appro
+msgid "Responsable des approvisionnements"
+msgstr "Responsable des approvisionnements"
+
+#. module: eniem_pdp
+#: model:res.groups,name:eniem_pdp.pdp_stock
+msgid "Responsable stock"
+msgstr "Responsable stock"
+
+#. module: eniem_pdp
+#: field:cbn.recept,reception:0
+msgid "Réception"
+msgstr "Réception"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:dai:eniem_pdp.dai_filter_search
+#: view:pdp:eniem_pdp.pdp_form
+#: view:website:eniem_pdp.report_pdp_besoin__document
+msgid "Référence"
+msgstr "Référence"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+msgid "Satut"
+msgstr "Satut"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "Search Plans"
+msgstr "Search Plans"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Semi finis"
+msgstr "Semi finis"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Semi finis eclatés"
+msgstr "Semi finis eclatés"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+#: model:ir.model,name:eniem_pdp.model_cbn_raw_bom
+#: model:ir.model,name:eniem_pdp.model_pdp_raw_bom
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Semis finis"
+msgstr "Semis finis"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Semis finis éclatés"
+msgstr "Semis finis éclatés"
+
+#. module: eniem_pdp
+#: field:pdp.line,september:0
+#: help:pdp.line,september:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Septembre"
+msgstr "Septembre"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Service emetteur:"
+msgstr "Service emetteur:"
+
+#. module: eniem_pdp
+#: field:dai,emission_service:0
+msgid "Service émetteur"
+msgstr "Service émetteur"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Soldée"
+msgstr "Soldée"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+msgid "Soldées"
+msgstr "Soldées"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Soumettre au chef de département"
+msgstr "Soumettre au chef de département"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Soumettre au directeur"
+msgstr "Soumettre au directeur"
+
+#. module: eniem_pdp
+#: model:res.groups,comment:eniem_pdp.pdp_service
+msgid "Soummettre  les DAIS au chef de departement"
+msgstr "Soummettre  les DAIS au chef de departement"
+
+#. module: eniem_pdp
+#: model:res.groups,comment:eniem_pdp.pdp_stock
+msgid "Soummettre  les DAIS au chef de section"
+msgstr "Soummettre  les DAIS au chef de section"
+
+#. module: eniem_pdp
+#: model:res.groups,comment:eniem_pdp.pdp_section
+msgid "Soummettre  les DAIS au chef de service"
+msgstr "Soummettre  les DAIS au chef de service"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Soummettre au chef de section"
+msgstr "Soummettre au chef de section"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Soummettre au chef de service"
+msgstr "Soummettre au chef de service"
+
+#. module: eniem_pdp
+#: field:dai,state:0
+#: field:pdp,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: eniem_pdp
+#: field:dai.line,state:0
+msgid "Statut"
+msgstr "Statut"
+
+#. module: eniem_pdp
+#: field:dai,purchase_status:0
+msgid "Statut d'achat"
+msgstr "Statut d'achat"
+
+#. module: eniem_pdp
+#: view:website:eniem_pdp.report_dai_document
+msgid "Statut d'achat:"
+msgstr "Statut d'achat:"
+
+#. module: eniem_pdp
+#: field:dai.line,state2:0
+msgid "Statut de traitement"
+msgstr "Statut de traitement"
+
+#. module: eniem_pdp
+#: field:pdp,line_brut_bom_eclate_ids:0
+msgid "Stock SFs eclatés"
+msgstr "Stock SFs eclatés"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.pdp_form
+msgid "Stock des semis finis"
+msgstr "Stock des semis finis"
+
+#. module: eniem_pdp
+#: view:cbn:eniem_pdp.cbn_form
+msgid "Stock dispo"
+msgstr "Stock dispo"
+
+#. module: eniem_pdp
+#: field:pdp,line_brut_bom_grouped_ids:0
+msgid "Stocks MP SFs groupés"
+msgstr "Stocks MP SFs groupés"
+
+#. module: eniem_pdp
+#: field:cbn,message_summary:0
+#: field:dai,message_summary:0
+#: field:pdp,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: eniem_pdp
+#: model:ir.actions.act_window,name:eniem_pdp.action_select_dai
+msgid "Sélectionner la DAI"
+msgstr "Sélectionner la DAI"
+
+#. module: eniem_pdp
+#: view:dai.purchaser:eniem_pdp.view_dai_purchaser
+msgid "Sélectionnerla DAI"
+msgstr "Sélectionnerla DAI"
+
+#. module: eniem_pdp
+#: field:pdp.line,total:0
+#: view:website:eniem_pdp.report_pdp_document
+msgid "Total"
+msgstr "Total"
+
+#. module: eniem_pdp
+#: field:pdp,total_pdp_cost:0
+msgid "Total PDP Cost"
+msgstr "Total PDP Cost"
+
+#. module: eniem_pdp
+#: field:cbn.recept,total_reception:0
+msgid "Total commande"
+msgstr "Total commande"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_form
+msgid "Traiter"
+msgstr "Traiter"
+
+#. module: eniem_pdp
+#: selection:dai.line,state2:0
+msgid "Traitée"
+msgstr "Traitée"
+
+#. module: eniem_pdp
+#: field:product.product,property_stock_transit:0
+msgid "Transit location"
+msgstr "Transit location"
+
+#. module: eniem_pdp
+#: field:dai,type_demande:0
+msgid "Type de demande"
+msgstr "Type de demande"
+
+#. module: eniem_pdp
+#: field:pdp.line,operating_unit_id:0
+msgid "Unite d'organisation"
+msgstr "Unite d'organisation"
+
+#. module: eniem_pdp
+#: field:pdp.raw.bom.grouped,product_uom_id:0
+msgid "Unite de mesure"
+msgstr "Unite de mesure"
+
+#. module: eniem_pdp
+#: field:dai,organization_unit_id:0
+msgid "Unité d'organisation"
+msgstr "Unité d'organisation"
+
+#. module: eniem_pdp
+#: field:cbn.definitive,product_uom_id:0
+#: field:cbn.definitive.common,product_uom_id:0
+#: field:cbn.raw.bom,product_uom_id:0
+#: field:cbn.recept,product_uom_id:0
+#: field:cbn.stock,product_uom_id:0
+#: field:dai.line,product_uom_id:0
+#: field:pdp.line,product_uom_id:0
+#: field:pdp.raw,product_uom_id:0
+#: field:pdp.raw.bom,product_uom_id:0
+#: field:pdp.raw.bom.eclate,product_uom_id:0
+#: field:pdp.raw.group,product_uom_id:0
+#: view:website:eniem_pdp.report_pdp_besoin__document
+msgid "Unité de mesure"
+msgstr "Unité de mesure"
+
+#. module: eniem_pdp
+#: field:cbn,message_unread:0
+#: field:dai,message_unread:0
+#: field:pdp,message_unread:0
+msgid "Unread Messages"
+msgstr "Messages non lus"
+
+#. module: eniem_pdp
+#: view:pdp:eniem_pdp.view_pdp_filter
+msgid "Utilisateur"
+msgstr "Utilisateur"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Validation département"
+msgstr "Validation département"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Validation section"
+msgstr "Validation section"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Validation service"
+msgstr "Validation service"
+
+#. module: eniem_pdp
+#: selection:dai.line,state:0
+msgid "Validé"
+msgstr "Validé"
+
+#. module: eniem_pdp
+#: selection:dai,state:0
+msgid "Validée"
+msgstr "Validée"
+
+#. module: eniem_pdp
+#: view:dai:eniem_pdp.dai_filter_search
+msgid "Validées"
+msgstr "Validées"
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/cbn.py:200
+#, python-format
+msgid "Vous ne pouvez pas regénérer les DAI car au moins une a subi un changement"
+msgstr "Vous ne pouvez pas regénérer les DAI car au moins une a subi un changement"
+
+#. module: eniem_pdp
+#: code:addons/eniem_pdp/models/cbn.py:79
+#, python-format
+msgid "Vous ne pouvez pas supprimer un CBN non brouillon ou non annulé!"
+msgstr "Vous ne pouvez pas supprimer un CBN non brouillon ou non annulé!"
+
+#. module: eniem_pdp
+#: field:cbn,website_message_ids:0
+#: field:dai,website_message_ids:0
+#: field:pdp,website_message_ids:0
+msgid "Website Messages"
+msgstr "Website Messages"
+
+#. module: eniem_pdp
+#: help:cbn,website_message_ids:0
+#: help:dai,website_message_ids:0
+#: help:pdp,website_message_ids:0
+msgid "Website communication history"
+msgstr "Website communication history"
+
+#. module: eniem_pdp
+#: field:cbn,xid:0
+#: field:cbn.definitive,xid:0
+#: field:cbn.definitive.common,xid:0
+#: field:cbn.line,xid:0
+#: field:cbn.raw.bom,xid:0
+#: field:cbn.recept,xid:0
+#: field:cbn.stock,xid:0
+#: field:dai,xid:0
+#: field:dai.line,xid:0
+#: field:dai.purchaser,xid:0
+#: field:pdp,xid:0
+#: field:pdp.line,xid:0
+#: field:pdp.raw,xid:0
+#: field:pdp.raw.bom,xid:0
+#: field:pdp.raw.bom.eclate,xid:0
+#: field:pdp.raw.bom.grouped,xid:0
+#: field:pdp.raw.group,xid:0
+msgid "XID"
+msgstr "XID"
+
+#. module: eniem_pdp
+#: view:dai.purchaser:eniem_pdp.view_dai_purchaser
+msgid "or"
+msgstr "or"
+
+#. module: eniem_pdp
+#: field:cbn.definitive.common,needed_quantity:0
+msgid "quantité brute"
+msgstr "quantité brute"
+

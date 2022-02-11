@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data noupdate="1">
+    <record id="pdp" model="ir.module.category">
+        <field name="name">PDP</field>
+
+        <field name="description">PDP</field>
+
+    </record>
+
+        <record id="pdp_stock" model="res.groups">
+        <field name="name">Responsable stock</field>
+        <field name="category_id" ref="pdp"/>
+        <field name="comment">Soummettre  les DAIS au chef de section</field>
+        </record>
+
+
+        <record id="pdp_section" model="res.groups">
+        <field name="name">Chef de section</field>
+        <field name="category_id" ref="pdp"/>
+        <field name="comment">Soummettre  les DAIS au chef de service</field>
+        </record>
+
+        <record id="pdp_service" model="res.groups">
+        <field name="name">Chef de sevice</field>
+        <field name="category_id" ref="pdp"/>
+        <field name="comment">Soummettre  les DAIS au chef de departement</field>
+        </record>
+
+        <record id="pdp_departement" model="res.groups">
+        <field name="name">Chef de département</field>
+        <field name="category_id" ref="pdp"/>
+        <field name="comment">Envoyer  les DAIS au directeur</field>
+        </record>
+
+        <record id="pdp_pdg" model="res.groups">
+        <field name="name">Directeur</field>
+        <field name="category_id" ref="pdp"/>
+        <field name="comment">Approuver les DAIS</field>
+        </record>
+
+        <record id="pdp_appro" model="res.groups">
+        <field name="name">Responsable des approvisionnements</field>
+        <field name="category_id" ref="pdp"/>
+        <field name="comment">Etablier le PDP, Calculer le CBDN, generer les DAIS</field>
+        </record>
+
+
+</data>
+</openerp>

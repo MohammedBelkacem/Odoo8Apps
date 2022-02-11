@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+
+<data>
+
+
+    <template id="report_rew_needs_document">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+
+                        <h2 t-field="doc.reference"/>
+                        <p>De: <span t-field="doc.start_date"/> A: <span t-field="doc.end_date"/></p>
+
+                        <h3>Besoins bruts:</h3>
+
+                <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Reference/Name</th>
+
+                        <th>Unité de mesure</th>
+                        <th>Quantité</th>
+                        <th>Nomenclatures</th>
+
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+               <tr t-foreach="doc.line_brut_grouped_ids" t-as="product">
+                        <td>
+                           <span t-field="product.product_id"/>
+                        </td>
+
+                      <td>   <span t-field="product.product_uom_id"/></td>
+                      <td>   <span t-field="product.total"/></td>
+
+                     <td t-foreach="product.parent_product_id" t-as="nomeclature"><span t-field="nomeclature.default_code"/></td>
+
+
+                  </tr>
+                </tbody>
+            </table>
+
+                       </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_raw_pdp">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+               <t t-raw="translate_doc(doc_id, doc_model, 'create_uid.lang', 'eniem_pdp.report_rew_needs_document')"/>
+        </t>
+    </t>
+   </template>
+    <report
+        id="report_rew_needs_view"
+        model="pdp"
+        string="Besoins bruts production"
+        report_type="qweb-pdf"
+        name="eniem_pdp.report_raw_pdp"
+        file="eniem_pdp.report_raw_pdp"/>
+
+
+</data>
+
+</openerp>

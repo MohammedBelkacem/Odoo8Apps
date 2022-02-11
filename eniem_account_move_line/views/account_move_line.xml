@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+ <record id="group_line_enries_product_category" model="ir.ui.view">
+    <field name="name">account.move.line.catagory</field>
+    <field name="model">account.move.line</field>
+    <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+    <field name="arch" type="xml">
+        <!-- find field description and add the field
+             idea_ids after it -->
+        <xpath expr="//filter [@string='Period']" position="after">
+          <filter string="Produit" icon="terp-go-month" domain="[]" context="{'group_by':'product_id'}"/>
+<filter string="Catégorie" icon="terp-go-month" domain="[]" context="{'group_by':'categ_id'}"/>
+        </xpath>
+    </field>
+</record>
+
+
+         </data>
+</openerp>

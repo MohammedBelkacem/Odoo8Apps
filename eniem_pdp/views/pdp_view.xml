@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+ <record model='ir.ui.view' id='pdp_form'>
+            <field name="name">pdp.form</field>
+            <field name="model">pdp</field>
+            <field name="arch" type="xml">
+                <form string="PDP">
+                    <header>
+
+                        <button name="action_compute_semi" class="oe_highlight" string="Stock des semis finis" type="object"  states="confirmed"/>
+                        <button name="action_compute_eclate_SF" class="oe_highlight" string="Eclater le Stock des semis finis" type="object"  states="confirmed"/>
+                        <button name="action_compute_mp_sf_grouped" class="oe_highlight" string="Grouper le stock MP des SFs" type="object"  states="confirmed"/>
+
+                        <button name="action_compute" class="oe_highlight" string="Calculer les besoins bruts" type="object"  states="confirmed"/>
+                        <button name="action_compute_total_grouped" class="oe_highlight" string="Grouper les besoins bruts" type="object"  states="confirmed"/>
+                        <button name="generate_cnb" class="oe_highlight" string="Générer le CBN" type="object"  states="freezed"/>
+                        <button name="action_draft" type="object" string="Brouillon" states="confirmed"/>
+                        <button name="action_confirm" type="object" string="Confirmer" states="draft" class="oe_highlight"/>
+                        <button name="action_freeze" type="object" string="Geler" states="confirmed" class="oe_highlight"/>
+                        <button name="action_canceled" type="object" string="Annuler" states="draft" class="oe_highlight"/>
+                        <button name="get_cost" type="object" string="Calculer le cout"  class="oe_highlight"/>
+
+                        <field name="state" widget="statusbar"/>
+
+                </header>
+                       <group>
+                       <group>
+                        <field name="name" string="Référence"/>
+                        <field name="start_date" string="Date de début"/>
+                        <field name="end_date" string="Date de fin"/>
+                        </group>
+                        <group>
+                        <field name = "create_date" string="Date de création" readonly="1"/>
+                        <field name = "write_date" string="Date de modification" readonly="1"/>
+                        <field name = "request_user_id"  readonly="1"/>
+                        <field name = "cbn_id"  readonly="1"/>
+                        </group>
+
+                           </group>
+                    <notebook>
+                        <page string="PDP Lines">
+                         <field name="line_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="Produits à fabriquer" editable="bottom">
+                                <field name="product_id" context="{'product_id':product_id}" />
+                                 <field name="cession_price" />
+                                <field name="january"/>
+                                <field name="february"/>
+                                <field name="march"/>
+                                <field name="april"/>
+                                <field name="mai"/>
+                                <field name="june"/>
+                                <field name="july"/>
+                                <field name="august"/>
+                                <field name="september"/>
+                                <field name="october"/>
+                                <field name="november"/>
+                                <field name="december"/>
+                                <field name="total"/>
+                                <field name="total_cession_price"/>
+
+
+                            </tree>
+                            <form string="Products">
+                                <group>
+                                    <field name="product_id"  />
+                                     <field name="cession_price" />
+                                   <field name="january"/>
+                                    <field name="february"/>
+                                    <field name="march"/>
+                                    <field name="april"/>
+                                    <field name="mai"/>
+                                    <field name="june"/>
+                                    <field name="july"/>
+                                    <field name="august"/>
+                                    <field name="september"/>
+                                    <field name="october"/>
+                                    <field name="november"/>
+                                    <field name="december"/>
+                                    <field name="total"/>
+                                     <field name="total_cession_price"/>
+
+                                </group>
+                            </form>
+                        </field>
+                         </page>
+                          <page string="Semi finis">
+                          <div class="oe_right oe_button_box" style="margin-top: 10px">
+                            <button name="action_raz" class="oe_highlight" string="Remettre à zéro" type="object"  states="confirmed"/>
+                        </div>
+
+                         <field name="line_brut_bom_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="Semis finis" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+                                <field name="disponible"/>
+
+
+
+                            </tree>
+                         </field>
+                         </page>
+                         <page string="Semi finis eclatés" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                         <field name="line_brut_bom_eclate_ids" >
+                            <tree string="Semis finis éclatés" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+                                <field name="disponible"/>
+
+
+
+                            </tree>
+                         </field>
+                         </page>
+
+                         <page string="MP des SFs groupées">
+                         <field name="line_brut_bom_grouped_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="MP des SFs groupée" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+                                <field name="disponible"/>
+
+
+
+                            </tree>
+                         </field>
+                         </page>
+
+                          <page string="Raw Lines">
+                         <field name="line_brut_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="MP de base" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+
+                                    <field name="quantity"/>
+                                    <field name="factor"/>
+                                    <field name="total"/>
+
+                                    <field name="parent_product_id"/>
+
+                            </tree>
+                         </field>
+                         </page>
+
+                           <page string="MP groupée">
+                         <field name="line_brut_grouped_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="Products" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+
+                                    <field name="total"/>
+                                    <field name="total_net"/>
+                                    <field name="parent_product_id"/>
+
+
+                            </tree>
+                         </field>
+                         </page>
+
+
+
+
+                    </notebook>
+                    <group>
+
+                    <group>
+
+                    </group>
+                    <group>
+
+                    </group>
+                    <group>
+
+                    </group>
+
+                    <group>
+                         <field name="total_pdp_cost"/>
+                    </group>
+
+                    </group>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread" options='{"thread_level": 1}'/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record model='ir.ui.view' id='pdp_tree'>
+            <field name="name">pdp.tree</field>
+            <field name="model">pdp</field>
+            <field name="arch" type="xml">
+                <tree string="PDP">
+                <field name="name" />
+                     <field name="start_date" />
+                      <field name="end_date" />
+                      <field name="state" />
+                      <field name="create_uid" />
+
+                </tree>
+            </field>
+        </record>
+
+
+<record id="view_pdp_filter" model="ir.ui.view">
+            <field name="name">pdp.list.select</field>
+            <field name="model">pdp</field>
+            <field name="arch" type="xml">
+                <search string="Search Plans">
+                    <field name="name" string="Plan reference" filter_domain="[('name','ilike',self)]"/>
+                    <filter string="My" domain="[('create_uid','=',uid)]" name="my_sale_orders_filter"/>
+                    <separator/>
+                    <filter string="Done" domain="[('state','=','freezed')]" help="Plans freezed"/>
+                    <separator/>
+                    <filter string="New Mail" name="message_unread" domain="[('message_unread','=',True)]"/>
+                    <group expand="0" string="Groupé par">
+                        <filter string="Utilisateur" domain="[]" context="{'group_by':'create_uid'}"/>
+                        <filter string="Date de début" domain="[]" context="{'group_by':'start_date'}"/>
+                        <filter string="Etat" domain="[]" context="{'group_by':'state'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+
+
+        <record model='ir.actions.act_window' id='pdp_act'>
+            <field name="name">PDP</field>
+            <field name="res_model">pdp</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form, Kanban</field>
+            <field name="search_view_id" ref="view_pdp_filter"/>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+               creer le premier PDP
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="PGA"  id="pga" sequence="2" />
+        <menuitem name="Prévision de production" parent="pga" id="pdp_menu" />
+
+
+        <menuitem id="pdp_menu1" name="Prévision de production" parent="pdp_menu"
+                  action="pdp_act"/>
+
+<!-- CBN -->
+
+
+
+         </data>
+</openerp>

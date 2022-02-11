@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_stock_transfer_form" model="ir.ui.view">
+            <field name="name">stock.transfer.insidjam</field>
+            <field name="model">stock.transfer.insidjam</field>
+            <field name="inherit_id" ref="insidjam_pack_std.view_stock_transfer_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//header//button[@name='cancel']" position="after">
+
+
+                      <button name="get_next_number" type ="object" string="Générer le DT" icon="gtk-media-play" />
+
+
+                </xpath>
+
+                <xpath expr="//field[@name='date']" position="after">
+                    <field name="dt"/>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="view_stock_transfer_dt_search" model="ir.ui.view">
+            <field name="name">stock.transfer.insidjam </field>
+            <field name="model">stock.transfer.insidjam</field>
+            <field name="inherit_id" ref="insidjam_pack_std.view_stock_transfer_search" />
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='user_id']"  position="after">
+                     <field name="dt" select="True"/>
+                </xpath>
+
+                </field>
+            </record>
+    </data>
+</openerp>

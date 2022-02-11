@@ -1,0 +1,32 @@
+<openerp>
+      <data>
+
+        <record id="view_dai_purchaser" model="ir.ui.view">
+            <field name="name">Sélectionner la DAI</field>
+            <field name="model">dai.purchaser</field>
+            <field name="arch" type="xml">
+                <form string="Sélectionnerla DAI">
+                    <group>
+                        <field name="dai_id" />
+                    </group>
+                    <footer>
+                        <button name="affect_line_to_dai" string="Affecter cette ligne" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_select_dai" model="ir.actions.act_window">
+               <field name="name">Sélectionner la DAI</field>
+               <field name="type">ir.actions.act_window</field>
+               <field name="res_model">dai.purchaser</field>
+               <field name="view_type">form</field>
+               <field name="view_mode">form</field>
+               <field name="context">{'record_id' : active_id}</field>
+               <field name="target">new</field>
+        </record>
+
+</data>
+</openerp>

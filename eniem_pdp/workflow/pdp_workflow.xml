@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wkf_pdp" model="workflow">
+            <field name="name">pdp.basic</field>
+            <field name="osv">pdp</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <!-- Etats -->
+        <record id="act_pdp_draft" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_pdp"/>
+            <field name="flow_start">True</field>
+            <field name="name">Brouillon</field>
+        </record>
+        <record id="act_pdp_confirm" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_pdp"/>
+
+            <field name="name">Confirmé</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'confirmed'})</field>
+
+
+        </record>
+        <record id="act_pdp_freeze" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_pdp"/>
+            <field name="name">Gelé</field>
+            <field name="flow_stop">True</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'freezed'})</field>
+        </record>
+       <record id="act_pdp_canceled" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_pdp"/>
+            <field name="flow_stop">True</field>
+            <field name="name">Annulée</field>
+             <field name="kind">function</field>
+            <field name="action">write({'state':'canceled'})</field>
+        </record>
+
+        <!--Transitions-->
+        <record id="trans_pdp_confirm" model="workflow.transition">
+            <field name="act_from" ref="act_pdp_draft"/>
+            <field name="act_to" ref="act_pdp_confirm"/>
+            <field name="signal">action_confirm</field>
+        </record>
+        <record id="trans_pdp_freeze" model="workflow.transition">
+            <field name="act_from" ref="act_pdp_confirm"/>
+            <field name="act_to" ref="act_pdp_freeze"/>
+            <field name="signal">action_freeze</field>
+        </record>
+
+
+        <record id="trans_pdp_cancel" model="workflow.transition">
+            <field name="act_from" ref="act_pdp_draft"/>
+            <field name="act_to" ref="act_pdp_canceled"/>
+            <field name="signal">action_canceled</field>
+        </record>
+        <record id="trans_pdp_cancel2" model="workflow.transition">
+            <field name="act_from" ref="act_pdp_confirm"/>
+            <field name="act_to" ref="act_pdp_canceled"/>
+            <field name="signal">action_canceled</field>
+        </record>
+
+
+
+    </data>
+</openerp>
