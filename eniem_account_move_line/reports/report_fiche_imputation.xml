@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+
+<data>
+
+
+    <template id="report_fiche_document">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+
+                           <table class="table table-condensed">
+
+                    <tr>
+                         <td> Unité: <span t-field="doc.operating_unit_id"/></td>
+
+                    </tr>
+
+
+                       </table>
+                       <table class="table table-condensed">
+
+                    <tr>
+                         <td> Fiche d'imputation comptable</td>
+
+                    </tr>
+
+
+                       </table>
+
+
+                        <table class="table table-condensed">
+
+                    <tr>
+                         <td> Pièce N°: <span t-field="doc.name"/></td><td> Journal N°: <span t-field="doc.journal_id"/></td> <td> Période N°: <span t-field="doc.period_id"/></td>
+
+                    </tr>
+
+
+                       </table>
+                <table class="table table-condensed">
+                <thead>
+                    <tr>
+                    <th>Date</th>
+
+
+                        <th>Compte</th>
+                          <th>Tiers</th>
+                         <th>Libéllé</th>
+                          <th>Débit</th>
+                           <th>Crédit</th>
+
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+               <tr t-foreach="doc.line_id" t-as="product">
+               <td>
+                           <span t-field="product.date"/>
+                        </td>
+               <td>
+                           <span t-field="product.account_id.code"/>
+                        </td>
+                        <td>
+                           <span t-field="product.partner_id"/>
+                        </td>
+                        <td>
+                           <span t-field="product.name"/>
+                        </td>
+
+                        <td>
+                           <span t-field="product.debit"/>
+                        </td>
+                        <td>
+                           <span t-field="product.credit"/>
+                        </td>
+
+                  </tr>
+                </tbody>
+            </table>
+             <table class="sale_tbody">
+
+                     <thead>
+                     <tr>
+                         <th> Comptable général</th>
+                         <th> Le cadre comptable ou le chef de section</th>
+                         <th> Le chef de service</th>
+                     </tr>
+                    </thead>
+                     <tr>
+                         <td> </td>
+                         <td> </td>
+                         <td> </td>
+
+                    </tr>
+
+
+                       </table>
+
+                       </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_fiche">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+               <t t-raw="translate_doc(doc_id, doc_model, 'create_uid.lang', 'eniem_account_move_line.report_fiche_document')"/>
+        </t>
+    </t>
+   </template>
+    <report
+        id="report_fiche_view"
+        model="account.move"
+        string="Fiche d'imputation"
+        report_type="qweb-pdf"
+        name="eniem_account_move_line.report_fiche"
+        file="eniem_account_move_line.report_fiche"/>
+
+
+</data>
+
+</openerp>

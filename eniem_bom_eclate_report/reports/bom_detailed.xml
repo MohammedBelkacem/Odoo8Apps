@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+
+<data>
+<template id="report_bom_detailed_document">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+
+                       <h3>Nomenclature: </h3><span t-field="doc.name"/>
+
+                        <h3>Composants:</h3>
+
+                <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+
+                        <th>Unité de mesure</th>
+                        <th>Facteur</th>
+                        <th>Cout</th>
+                        <th>total</th>
+
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+               <tr t-foreach="doc.mrp_bom_line_detailed_ids" t-as="product">
+                        <td>
+                           <span t-field="product.product_id"/>
+                        </td>
+
+                      <td>   <span t-field="product.product_uom_id"/></td>
+                      <td>   <span t-field="product.factor"/></td>
+                      <td>   <span t-field="product.pmp"/></td>
+                      <td>   <span t-field="product.total"/></td>
+
+
+
+
+                  </tr>
+                </tbody>
+            </table>
+
+                       </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_bom_detailed">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+               <t t-raw="translate_doc(doc_id, doc_model, 'create_uid.lang', 'eniem_bom_eclate_report.report_bom_detailed_document')"/>
+        </t>
+    </t>
+   </template>
+    <report
+        id="report_bom_detailed_view"
+        model="mrp.bom"
+        string="BOM detailed"
+        report_type="qweb-pdf"
+        name="eniem_bom_eclate_report.report_bom_detailed"
+        file="eniem_bom_eclate_report.report_bom_detailed"/>
+
+
+</data>
+
+</openerp>

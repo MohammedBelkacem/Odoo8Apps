@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+
+
+<!-- CBN -->
+
+<record model='ir.ui.view' id='dai_form'>
+            <field name="name">dai.form</field>
+            <field name="model">dai</field>
+            <field name="arch" type="xml">
+                <form string="DAI">
+                    <header>
+                        <button name="button_submit" type="object"  string="Soummettre au chef de section" states="draft" groups="eniem_pdp.pdp_stock"/>
+                        <button name="button_submit_cser" type="object"  string="Soummettre au chef de service" states="submited" groups="eniem_pdp.pdp_section" />
+                        <button name="button_submit_dep" type="object" string="Soumettre au chef de département"  states="submited1" groups="eniem_pdp.pdp_service" />
+                        <button name="button_validate" type="object" string="Soumettre au directeur"  states="submited2" groups="eniem_pdp.pdp_departement" />
+                        <button name="button_approve" type="object" string="Approbation" states="validated"  groups="eniem_pdp.pdp_pdg" />
+                        <!--<button name="button_terminate" type="object" string="Solder" states="in_process"  groups="purchase.group_purchase_manager"/>-->
+                        <button name="button_cancel" type="object" string="Annuler" states="draft,submited,submited1,validated,approved" />
+                        <button name="benerate_rfq" type="object" string="Générer la consultation" states="terminate,in_process" groups="eniem_pdp.pdp_departement,eniem_pdp.pdp_service"/>
+                        <field name="state" widget="statusbar"/>
+                </header>
+                <group>
+                <group>
+                    <field name="categ_id" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name="exercice" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name="name" string="Numéro" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name="emission_service" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name="purchase_status" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name="dai_object" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name="request_user_id" string="Demandeur" readonly="1"/>
+                    <field name="purchaser_id" string="Acheteur" attrs="{'readonly':[('state', 'not in', ['draft','submited','submited1','submited2'])]}"/>
+
+<!-- 'required':[('state', 'in', ['draft','submited','canceled'])],-->
+
+                </group>
+                   <group>
+                    <field name="type_demande" readonly="1"/>
+                    <field name="organization_unit_id" readonly="1"/>
+                    <field name="cbn_id" string="CBN" attrs="{'invisible': [('type_demande', 'not in', 'Automatique')]}" readonly="1"/>
+                    <field name="manual_cbn" string="Origine de la demande" attrs="{'readonly':[('state', 'not in', ['draft'])],'invisible': [('type_demande', 'in', 'Automatique')]}"/>
+                    <field name = "create_date" string="Date de création" readonly="1" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name = "write_date" string="Date de modification" readonly="1" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name = "create_uid" string="Créé par" readonly="1" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+                    <field name = "write_uid" string="Modifié par" readonly="1" attrs="{'readonly':[('state', 'not in', ['draft'])]}"/>
+
+                </group>
+
+
+
+
+                </group>
+
+                    <notebook>
+                        <page string="Les lignes du DAI">
+                        <field name="line_ids" attrs="{'readonly': [('state', 'not in', ['draft','submited'])]}">
+                            <tree string="Products" editable="bottom">
+                                <field name="product_id" on_change="product_id_change( product_id, False, context)"/>
+                                <field name="product_uom_id"/>
+                                <field name="requested_quantity"/>
+                                <field name="modified_quantity"/>
+                                 <field name = "create_date" string="Date de création" readonly="1"/>
+                                 <field name = "write_date" string="Date de modification" readonly="1"/>
+                                <field name="state" readonly="1"/>
+                                <button name="button_cancel" type ="object" string="Annuler" states="draft"   icon="gtk-stop" />
+                                <button name="button_process" type ="object" string="Traiter" states="draft" icon="gtk-media-play" />
+                                <button name="%(action_select_dai)d" type="action" string="Affecter cette ligne à un autre acheteur" icon="gtk-execute" states="draft"/>
+                                <field name="state2" readonly="1"/>
+                                <field name="rfq_id" readonly="1" string="Consultation"/>
+
+                            </tree>
+                        </field>
+
+                   </page>
+
+                    </notebook>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread" options='{"thread_level": 1}'/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="dai_filter_search">
+            <field name="name">dai.tree.filter_search</field>
+            <field name="model">dai</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="exercice" string="Exercice" />
+                    <field name="purchaser_id" string="Acheteur" />
+                    <field name="request_user_id" string="Demandeur" />
+                    <field name="name" string="Référence" />
+                    <field name="categ_id" string="Catégorie de produit" />
+
+                    <separator/>
+                    <filter string="Validées" name="dai_valid" domain="[('state','=','approved')]" />
+                    <filter string="Approuvées" name="dai_approved" domain="[('state','=','validated')]"/>
+                    <filter string="En traitement" name="dai_in_rocess" domain="[('state','=','in_process')]"/>
+                    <filter string="Soldées" name="dai_ended" domain="[('state','=','terminate')]"/>
+
+                    <separator/>
+
+                    <group expand="0" string="Groupé par">
+                    <filter string="Demandeur" domain="[]" context="{'group_by':'request_user_id'}"/>
+                    <filter string="Satut" domain="[]" context="{'group_by':'state'}"/>
+                    <filter string="Catégorie de produit" domain="[]" context="{'group_by':'categ_id'}"/>
+                    <filter string="Acheteur" domain="[]" context="{'group_by':'purchaser_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+        <record model='ir.ui.view' id='dai_tree'>
+            <field name="name">dai.tree</field>
+            <field name="model">dai</field>
+            <field name="arch" type="xml">
+                <tree string="DAI">
+                    <field name="name" />
+                   <field name="purchaser_id" />
+                    <field name="categ_id"/>
+                    <field name="request_user_id" string="Demandeur"/>
+                    <field name="type_demande"/>
+                    <field name="state" />
+                    <field name="organization_unit_id" />
+
+                </tree>
+            </field>
+        </record>
+
+         <record model='ir.actions.act_window' id='dai_act'>
+            <field name="name">Demande d'achat</field>
+            <field name="res_model">dai</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form, Kanban</field>
+            <field name="domain">[('state', 'in', ['approved','in_process','terminate'])]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+               créer la première dai
+              </p>
+            </field>
+        </record>
+        <record model='ir.actions.act_window' id='dai2_act'>
+            <field name="name">Demande d'achat</field>
+            <field name="res_model">dai</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('state', 'in', ['draft','submited','submited1','submited2','validated'])]</field>
+            <field name="view_mode">tree,form, Kanban</field>
+
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+               créer la première dai
+              </p>
+            </field>
+        </record>
+         <record model='ir.actions.act_window' id='dai3_act'>
+            <field name="name">Demande d'achat</field>
+            <field name="res_model">dai</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form, Kanban</field>
+            <field name="domain">[('state', 'in', ['approved','in_process','terminate'])]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+               créer la première dai
+              </p>
+            </field>
+        </record>
+        <record model='ir.actions.act_window' id='dai4_act'>
+            <field name="name">Demande d'achat</field>
+            <field name="res_model">dai</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form, Kanban</field>
+            <field name="domain">[('state', 'in', ['canceled'])]</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+               créer la première dai
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Demande d'achat interne" parent="pga" id="dai_menu" />
+
+
+        <menuitem id="dai_menu1" name="Demande d'achat interne" parent="dai_menu"
+                  action="dai_act"/>
+        <menuitem id="dai_menu2" name="Demande d'achat interne" parent="stock.menu_stock_sched"
+                  action="dai2_act"/>
+        <menuitem id="dai_menu4" name="Demande d'achat interne annulée" parent="stock.menu_stock_sched"
+                  action="dai4_act"/>
+
+        <menuitem id="dai_menu3" name="Demande d'achat interne" parent="purchase.menu_procurement_management"
+                  action="dai3_act"/>
+
+
+
+
+
+         </data>
+</openerp>

@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* eniem_bom_routing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-09-14 14:08+0000\n"
+"PO-Revision-Date: 2021-09-14 15:11+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr\n"
+"X-Generator: Poedit 3.0\n"
+
+#. module: eniem_bom_routing
+#: view:mrp.bom:eniem_bom_routing.mrp_bom_form
+#: view:mrp.routing:eniem_bom_routing.mrp_routing_form
+msgid "Annuler"
+msgstr "Annuler"
+
+#. module: eniem_bom_routing
+#: selection:mrp.bom,state:0 selection:mrp.routing,state:0
+msgid "Annulée"
+msgstr "Annulée"
+
+#. module: eniem_bom_routing
+#: model:ir.model,name:eniem_bom_routing.model_mrp_bom
+msgid "Bill of Material"
+msgstr "Nomenclature"
+
+#. module: eniem_bom_routing
+#: view:mrp.bom:eniem_bom_routing.mrp_bom_form selection:mrp.bom,state:0
+#: view:mrp.routing:eniem_bom_routing.mrp_routing_form
+#: selection:mrp.routing,state:0
+msgid "Brouillon"
+msgstr "Brouillon"
+
+#. module: eniem_bom_routing
+#: field:mrp.bom,state:0 field:mrp.routing,state:0
+msgid "Etat"
+msgstr "Etat"
+
+#. module: eniem_bom_routing
+#: code:addons/eniem_bom_routing/models/bom.py:43
+#: code:addons/eniem_bom_routing/models/routing.py:43
+#, python-format
+msgid "Invalid Action!"
+msgstr "Action non valide !"
+
+#. module: eniem_bom_routing
+#: model:ir.model,name:eniem_bom_routing.model_mrp_routing
+msgid "Routing"
+msgstr "Gamme"
+
+#. module: eniem_bom_routing
+#: view:mrp.bom:eniem_bom_routing.mrp_bom_form
+#: view:mrp.routing:eniem_bom_routing.mrp_routing_form
+msgid "Soumettre"
+msgstr "Soumettre"
+
+#. module: eniem_bom_routing
+#: selection:mrp.bom,state:0 selection:mrp.routing,state:0
+msgid "Soumise à validation"
+msgstr "Soumise à validation"
+
+#. module: eniem_bom_routing
+#: view:mrp.bom:eniem_bom_routing.mrp_bom_form
+#: view:mrp.routing:eniem_bom_routing.mrp_routing_form
+msgid "Valider"
+msgstr "Valider"
+
+#. module: eniem_bom_routing
+#: selection:mrp.bom,state:0 selection:mrp.routing,state:0
+msgid "Validée"
+msgstr "Validée"
+
+#. module: eniem_bom_routing
+#: code:addons/eniem_bom_routing/models/routing.py:43
+#, python-format
+msgid ""
+"Vou ne pouvez pas supprimer de gammes. Vous pouvez la désactiver en décochant la case Actif.\n"
+" Si vous souhaitez la supprimer prière de contacter la DSI"
+msgstr ""
+"Vou ne pouvez pas supprimer de gammes. Vous pouvez la désactiver en décochant la case Actif.\n"
+" Si vous souhaitez la supprimer prière de contacter la DSI"
+
+#. module: eniem_bom_routing
+#: code:addons/eniem_bom_routing/models/bom.py:43
+#, python-format
+msgid ""
+"Vou ne pouvez pas supprimer de nomenclatures. Vous pouvez la désactiver en décochant la case Actif.\n"
+" Allez sur l'onglet Propriétés et décochez la case Actif. Si vous souhaitez la supprimer prière de contacter la DSI"
+msgstr ""
+"Vou ne pouvez pas supprimer de nomenclatures. Vous pouvez la désactiver en décochant la case Actif.\n"
+" Allez sur l'onglet Propriétés et décochez la case Actif. Si vous souhaitez la supprimer prière de contacter la DSI"

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="product_normal_form_pga_view" model="ir.ui.view">
+            <field name="name">product.product</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="insidjam_product_kit.product_product_form_view_kit"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//div[@name='options_kit']" position="after">
+
+
+                                <div>
+                                    <field name="is_shared"/>
+                                    <label for="is_shared"/>
+                                </div>
+
+
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

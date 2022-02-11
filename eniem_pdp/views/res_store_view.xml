@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_purchase_requisition_dai_form" model="ir.ui.view">
+            <field name="name">res.store</field>
+            <field name="model">res.store</field>
+            <field name="inherit_id" ref="insidjam_multi_store_ou.view_res_store_form"/>
+            <field name="arch" type="xml">
+
+
+                <xpath expr="//field[@name='sequence_br_tr_id']" position="after">
+
+                    <field name="sequence_dai_id"/>
+
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

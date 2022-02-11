@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+
+<!-- CBN -->
+
+ <record model='ir.ui.view' id='cbn_form'>
+            <field name="name">cbn.form</field>
+            <field name="model">cbn</field>
+            <field name="arch" type="xml">
+                <form string="CBN">
+                    <header>
+
+
+                        <button name="button_confirm" class="oe_highlight" string="Confirmer" states="draft" type="object"/>
+                        <button name="button_freeze" class="oe_highlight" string="Figer" states="confirmed" type="object"/>
+                        <button name="button_cancel" class="oe_highlight" string="Annuler" states="draft" type="object"/>
+                        <button name="action_load_stock" class="oe_highlight" string="Calculer le stock disponible" type="object" states="freezed" />
+                        <button name="action_load_recepr" class="oe_highlight" string="Charger les encours de réception" type="object" states="freezed"  />
+                        <button name="action_load_defitive_needs" class="oe_highlight" string="Charger les quantité définitives" type="object"  states="freezed"/>
+                        <button name="generate_dai" class="oe_highlight" string="Générer les DAIs" type="object"  states="freezed" />
+                         <field name="state" widget="statusbar"/>
+
+                </header>
+                <group>
+                <group>
+                        <field name="name" string="Référence"/>
+                        <field name="pdp_id" string="PDP"/>
+                        </group>
+                <group>
+                        <field name = "create_date" string="Date de création" readonly="1"/>
+                    <field name = "__last_update" string="Date de modification" readonly="1"/>
+                    </group>
+                </group>
+                    <notebook>
+                        <page string="Les lignes du CBN">
+                          <field name="line_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="Products" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+
+                                    <field name="needed_quantity"/>
+
+                            </tree>
+                         </field>
+
+                   </page>
+                   <page string="Semi finis">
+                         <field name="line_brut_bom_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="Semis finis" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+                                <field name="disponible"/>
+
+
+
+                            </tree>
+                         </field>
+                         </page>
+
+                   <page string="Stock dispo">
+                          <field name="line_stock_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="Products" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+
+                                    <field name="stock_available"/>
+                                    <field name="needed_quantity"/>
+
+                            </tree>
+                         </field>
+
+                   </page>
+
+                   <page string="En arrivage">
+                          <field name="line_recept_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}">
+                            <tree string="Products" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+
+                                    <field name="commanded"/>
+                                    <field name="douane"/>
+                                    <field name="reception"/>
+                                    <field name="total_reception"/>
+                                    <field name="stock_available"/>
+                                    <field name="needed_quantity"/>
+
+                            </tree>
+                         </field>
+
+                   </page>
+                   <page string="A approvisionner">
+                          <field name="line_definitive_ids" attrs="{'readonly': [('state', 'not in', ['draft'])]}" >
+                            <tree string="Products" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+
+                                    <field name="needed_quantity"/>
+                                    <field name="total_reception"/>
+                                    <field name="stock_available"/>
+                                    <field name="total_to_supply"/>
+
+                            </tree>
+                         </field>
+
+                   </page>
+
+                   <page string="Produits communs">
+                          <field name="line_definitive_common_ids"  ><!--attrs="{'readonly': [('state', 'not in', ['draft'])]}"-->
+                            <tree string="Products" editable="bottom">
+                                <field name="product_id" />
+                                <field name="product_uom_id"/>
+
+                                    <field name="needed_quantity"/>
+                                    <field name="total_reception"/>
+                                    <field name="stock_available"/>
+                                    <field name="total_to_supply"/>
+                                    <field name="purchaser_id"/>
+                                    <field name="categ_id"/>
+
+                            </tree>
+                         </field>
+
+                   </page>
+
+
+                    </notebook>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread" options='{"thread_level": 1}'/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+
+        <record model='ir.ui.view' id='cbn_tree'>
+            <field name="name">cbn.tree</field>
+            <field name="model">cbn</field>
+            <field name="arch" type="xml">
+                <tree string="CBN">
+                    <field name="name" />
+                      <field name="state" />
+
+
+                </tree>
+            </field>
+        </record>
+
+         <record model='ir.actions.act_window' id='cbn_act'>
+            <field name="name">CBN</field>
+            <field name="res_model">cbn</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form, Kanban</field>
+            <field name="help" type="html">
+              <p class="oe_view_nocontent_create">
+               creer le premier CBN
+              </p>
+            </field>
+        </record>
+
+        <menuitem name="Besoins nets" parent="pga" id="cbn_menu" />
+
+
+        <menuitem id="cbn_menu1" name="Calcul des besoins nets" parent="cbn_menu"
+                  action="cbn_act"/>
+         </data>
+</openerp>

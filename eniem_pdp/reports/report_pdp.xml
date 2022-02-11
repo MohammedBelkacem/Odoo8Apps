@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+
+<data>
+
+
+    <template id="report_pdp_document">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+
+                        <h2 t-field="doc.name"/>
+                        <p>De: <span t-field="doc.start_date"/> A: <span t-field="doc.end_date"/></p>
+
+                        <h3>Liste des produits:</h3>
+
+                <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Reference/Name</th>
+                        <th>Janvier</th>
+                        <th>Février</th>
+                        <th>Mars</th>
+                        <th>Avril</th>
+                        <th>Mai</th>
+                        <th>Juin</th>
+                        <th>Juillet</th>
+                        <th>Août</th>
+                        <th>Septembre</th>
+                        <th>Octobre</th>
+                        <th>Novembre</th>
+                        <th>Décembre</th>
+                        <th>Total</th>
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+               <tr t-foreach="doc.line_ids" t-as="product">
+                        <td>
+                           <span t-field="product.product_id"/>
+                        </td>
+
+                       <td>  <span t-field="product.january"/></td>
+                      <td>   <span t-field="product.february"/></td>
+                       <td>  <span t-field="product.march"/></td>
+                       <td>  <span t-field="product.april"/></td>
+                      <td>   <span t-field="product.mai"/></td>
+                     <td>    <span t-field="product.june"/></td>
+                    <td>     <span t-field="product.july"/></td>
+                     <td>    <span t-field="product.august"/></td>
+                      <td>   <span t-field="product.september"/></td>
+                      <td>   <span t-field="product.october"/></td>
+                      <td>   <span t-field="product.november"/></td>
+                     <td>    <span t-field="product.december"/></td>
+                    <td>     <span t-field="product.total"/></td>
+
+                  </tr>
+                </tbody>
+            </table>
+
+                       </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_pdp">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+               <t t-raw="translate_doc(doc_id, doc_model, 'create_uid.lang', 'eniem_pdp.report_pdp_document')"/>
+        </t>
+    </t>
+   </template>
+    <report
+        id="report_pdp_view"
+        model="pdp"
+        string="Pland de production"
+        report_type="qweb-pdf"
+        name="eniem_pdp.report_pdp"
+        file="eniem_pdp.report_pdp"/>
+
+
+</data>
+
+</openerp>

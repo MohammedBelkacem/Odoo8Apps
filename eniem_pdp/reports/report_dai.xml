@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+
+<data>
+
+
+    <template id="report_dai_document">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+
+                        <h2>Edition de la demande d'achat interne (D.A.I): </h2> <h2 t-field="doc.name"/>
+                        <p>Demandeur: <span t-field="doc.request_user_id"/></p>
+                        <p>Service emetteur: <span t-field="doc.emission_service"/></p>
+                        <p>Statut d'achat: <span t-field="doc.purchase_status"/></p>
+                        <p>Objet de la DAI: <span t-field="doc.dai_object"/></p>
+                        <p></p>
+                        <p></p>
+
+
+                        <h3>Liste des produits:</h3>
+
+                <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Code prod</th>
+                        <th>Nom prod</th>
+                         <th>Quantité demandée</th>
+                        <th>Quantité modifiée</th>
+                         <th>Date de demande</th>
+                        <th>Date de modification</th>
+
+
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+               <tr t-foreach="doc.line_ids" t-as="product">
+                        <td> <span t-field="product.product_id.default_code"/></td>
+                        <td> <span t-field="product.product_id.name"/></td>
+
+                       <td>  <span t-field="product.requested_quantity"/></td>
+                        <td>  <span t-field="product.modified_quantity"/></td>
+                        <td>  <span t-field="product.create_date"/></td>
+                        <td>  <span t-field="product.write_date"/></td>
+
+
+
+                  </tr>
+                </tbody>
+            </table>
+
+
+
+              <div>
+            <table class="table table-condensed">
+            <tr class="sale_tbody"><td class="sale_tbody">Le chef de section</td><td>Le chef de service</td><td>Le chef de département</td><td>Le directeur</td></tr>
+            </table>
+            </div>
+                       </div>
+                </t>
+
+
+
+
+            </t>
+        </t>
+    </template>
+
+    <template id="report_dai">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+               <t t-raw="translate_doc(doc_id, doc_model, 'create_uid.lang', 'eniem_pdp.report_dai_document')"/>
+        </t>
+    </t>
+   </template>
+    <report
+        id="report_dai_view"
+        model="dai"
+        string="Demande d'achat interne"
+        report_type="qweb-pdf"
+        name="eniem_pdp.report_dai"
+        file="eniem_pdp.report_dai"/>
+
+
+</data>
+
+</openerp>

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="wkf_dai" model="workflow">
+            <field name="name">dai.basic</field>
+            <field name="osv">dai</field>
+            <field name="on_create">True</field>
+        </record>
+
+        <!-- Etats -->
+        <record id="act_draft" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+            <field name="flow_start">True</field>
+            <field name="name">Brouillon</field>
+        </record>
+        <record id="act_submited" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+
+            <field name="name">Soumis Sec</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'submited'})</field>
+
+
+        </record>
+        <record id="act_submited1" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+            <field name="name">Soumis Ser</field>
+            <field name="kind">function</field>
+            <field name="action">write({'state':'submited1'})</field>
+        </record>
+
+        <record id="act_submited2" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+            <field name="name">Soumis Dep</field>
+             <field name="kind">function</field>
+            <field name="action">write({'state':'submited2'})</field>
+
+        </record>
+         <record id="act_validated" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+            <field name="name">Soumis Dir</field>
+             <field name="kind">function</field>
+            <field name="action">write({'state':'validated'})</field>
+
+        </record>
+
+         <record id="act_approved" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+
+            <field name="name">Approuvé</field>
+             <field name="kind">function</field>
+            <field name="action">write({'state':'approved'})</field>
+        </record>
+        <record id="act_in_process" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+
+            <field name="name">En cours</field>
+             <field name="kind">function</field>
+            <field name="action">write({'state':'in_process'})</field>
+        </record>
+         <record id="act_terminate" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+            <field name="flow_stop">True</field>
+            <field name="name">Soldée</field>
+             <field name="kind">function</field>
+            <field name="action">write({'state':'terminate'})</field>
+        </record>
+
+
+        <record id="act_canceled" model="workflow.activity">
+            <field name="wkf_id" ref="wkf_dai"/>
+            <field name="flow_stop">True</field>
+            <field name="name">Annulée</field>
+             <field name="kind">function</field>
+            <field name="action">write({'state':'approved'})</field>
+        </record>
+
+        <!--Transitions-->
+        <record id="trans_draft_submit" model="workflow.transition">
+            <field name="act_from" ref="act_draft"/>
+            <field name="act_to" ref="act_submited"/>
+            <field name="signal">button_submit</field>
+        </record>
+        <record id="trans_submit1" model="workflow.transition">
+            <field name="act_from" ref="act_submited"/>
+            <field name="act_to" ref="act_submited1"/>
+            <field name="signal">button_submit_cser</field>
+        </record>
+
+
+        <record id="trans_submit2" model="workflow.transition">
+            <field name="act_from" ref="act_submited1"/>
+            <field name="act_to" ref="act_submited2"/>
+            <field name="signal">button_submit_dep</field>
+        </record>
+        <record id="trans_validate" model="workflow.transition">
+            <field name="act_from" ref="act_submited2"/>
+            <field name="act_to" ref="act_validated"/>
+            <field name="signal">button_validate</field>
+        </record>
+        <record id="trans_approve" model="workflow.transition">
+            <field name="act_from" ref="act_validated"/>
+            <field name="act_to" ref="act_approved"/>
+            <field name="signal">button_approve</field>
+        </record>
+        <record id="trans_inprocess" model="workflow.transition">
+            <field name="act_from" ref="act_approved"/>
+            <field name="act_to" ref="act_in_process"/>
+            <field name="signal">button_in_process</field>
+        </record>
+         <record id="trans_terminate" model="workflow.transition">
+            <field name="act_from" ref="act_in_process"/>
+            <field name="act_to" ref="act_terminate"/>
+            <field name="signal">button_terminate</field>
+        </record>
+          <record id="trans_cancel1" model="workflow.transition">
+            <field name="act_from" ref="act_draft"/>
+            <field name="act_to" ref="act_canceled"/>
+            <field name="signal">button_cancel</field>
+        </record>
+        <record id="trans_cancel2" model="workflow.transition">
+            <field name="act_from" ref="act_submited"/>
+            <field name="act_to" ref="act_canceled"/>
+            <field name="signal">button_cancel</field>
+        </record>
+        <record id="trans_cancel3" model="workflow.transition">
+            <field name="act_from" ref="act_submited1"/>
+            <field name="act_to" ref="act_canceled"/>
+            <field name="signal">button_cancel</field>
+        </record>
+         <record id="trans_cancel4" model="workflow.transition">
+            <field name="act_from" ref="act_submited2"/>
+            <field name="act_to" ref="act_canceled"/>
+            <field name="signal">button_cancel</field>
+        </record>
+
+       <record id="trans_cancel5" model="workflow.transition">
+            <field name="act_from" ref="act_validated"/>
+            <field name="act_to" ref="act_canceled"/>
+            <field name="signal">button_cancel</field>
+        </record>
+
+
+
+
+    </data>
+</openerp>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <template id="assets_frontend" inherit_id="website.assets_frontend">
+             <xpath expr="." position="inside">
+                 <link rel="stylesheet" href="/eniem_report/static/src/css/reports.css"/>
+             </xpath>
+        </template>
+
+       <template id="external_layout_header" inherit_id="insidjam_multi_store_ou.external_layout_header">
+            <xpath expr="//div[@class='header']" position="replace">
+                <div class="header" style="font-size:10pt;line-height:12pt;margin-left: 40px;margin-right: 40px;">
+                    <style>
+                        .header{
+                            font-family: ArtegraSans;
+                        }
+                        span{
+                            color:#00004d !important;
+                        }
+                        td{
+                            color:#00004d !important;
+                        }
+                    </style>
+                    <div class="row">
+                        <div class="col-xs-9 text-left" style="margin-top:20px;">
+                            <img t-if="company.logo" t-att-src="'data:image/png;base64,%s' % company.logo" style="max-height: 150px;align:right;margin-top:20px"/>
+                        </div>
+                        <div class="col-xs-3 text-right" style="margin-top:40px;">
+                            <table>
+                                <tr><td class="text-left">
+                                    <span>Lieu: </span>
+                                    <t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                        <span t-field="o.operating_unit_id.store_id.city"/>
+                                    </t>
+                                    <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                        <span t-field="o.company_id.city"/>
+                                    </t>
+                                </td></tr>
+                                <tr><td class="text-left"><span>Date: </span> <span t-esc="datetime.datetime.now().date().strftime('%d-%m-%Y')" ></span></td></tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <table style="margin-top:10px; width:100%">
+                                <tr width="100%">
+                                      <th width="50%"></th>
+                                      <th width="27%"></th>
+                                      <th width="23%"></th>
+                                 </tr>
+                                <tr height="30"><td/><td/><td/></tr>
+                                 <tr>
+                                     <td class="text-left" colspan="2" >
+                                         <span>A: </span>
+                                         <t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="o.operating_unit_id.store_id.street"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.street"/>
+                                         </t>
+                                     </td>
+                                     <td class="text-left" >
+                                         <span>RC: </span>
+                                         <span  style="margin-top:0px;" t-field="company.company_registry"/>
+                                     </td>
+                                 </tr>
+
+                                 <tr>
+                                     <td class="text-left" colspan="2">
+                                         <span>T: </span><t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="o.operating_unit_id.store_id.phone"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.phone"/>
+                                         </t>
+                                     </td>
+                                     <td class="text-left" >
+                                         <span>AI: </span><t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="o.operating_unit_id.store_id.ai"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.ai"/>
+                                         </t>
+                                      </td>
+                                 </tr>
+                                 <tr>
+                                     <td class="text-left" colspan="2" >
+                                         <span>F: </span><t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="o.operating_unit_id.store_id.fax"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.fax"/>
+                                         </t>
+                                     </td>
+                                     <td class="text-left">
+                                         <span>ID FISCAL: </span>
+                                         <t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="o.operating_unit_id.store_id.nif"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.nif"/>
+                                         </t>
+                                      </td>
+                                 </tr>
+                                 <tr>
+                                     <td class="text-left" colspan="2" >
+                                         <span>E: </span><t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="company.email"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.email"/>
+                                         </t>
+                                     </td>
+                                     <td class="text-left">
+                                         <span >NIS: </span>
+                                         <t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="o.operating_unit_id.store_id.nis"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.nif"/>
+                                         </t>
+                                      </td>
+                                 </tr>
+                                 <tr style="border: 1px ; margin-top:0;  margin-right:0; margin-bottom:0; margin-left:5px;width:100% " >
+                                     <td class="text-left" colspan="2" >
+                                     S: <t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="company.website"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="company.website"/>
+                                         </t>
+                                     </td>
+                                     <td class="text-left" >
+                                      </td>
+                                 </tr>
+                                <tr><td height="20"></td></tr>
+                                <tr>
+                                    <td>
+                                        <table>
+                                        <t t-set="nb" t-value="1"/>
+                                            <t t-foreach="o.company_id.bank_ids" t-as="line">
+                                                <t t-if="line.footer">
+                                                    <tr>
+                                                        <td style="padding-right:3;">
+                                                            <t t-if="nb == 1">
+                                                                <span>Compte : </span>
+                                                            </t>
+                                                        </td>
+                                                        <td>
+                                                            <span style="margin-top:0px;" t-field="line.acc_number"/> : <span style="margin-top:0px;" t-field="line.bank_name"/>
+                                                        </td>
+                                                    </tr>
+                                                    <t t-set="nb" t-value="2"/>
+                                                </t>
+                                            </t>
+                                        </table>
+                                    </td>
+                                    <td >
+                                      </td>
+                                </tr>
+
+                                 <tr>
+                                     <td class="text-left" colspan="2" >
+                                     RIB: <t t-if="o.operating_unit_id and o.operating_unit_id.store_id">
+                                             <span style="margin-top:0px;" t-field="company.rib"/>
+                                         </t>
+                                         <t t-if="not o.operating_unit_id or not o.operating_unit_id.store_id">
+                                             <span  style="margin-top:0px;" t-field="company.rib"/>
+                                         </t>
+                                     </td>
+                                     <td class="text-left">
+                                      </td>
+                                 </tr>
+                    </table>
+                </div>
+            </xpath>
+       </template>
+
+
+        <template id="external_layout_footer" inherit_id="insidjam_pack_std.external_layout_footer">
+            <xpath expr="//div[@class='footer']" position="replace">
+                <div class="footer">
+                    <style>
+                        .footer {
+                             width: 1450px;
+                             position: absolute;
+                             height: 100px;
+                             margin-left:-80px;
+                             margin-right:-30px;
+                        }
+                    </style>
+                    <div style="float:left;width:70%;border-top: 100px solid #F70315;background-color:#F70315"></div>
+                    <div style="float:left;width:4%;border-top: 100px solid white;background-color:white;"></div>
+                    <div style="float:left;width:26%;border-top: 100px solid #011651;background-color:#011651"></div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_receipt_layout_header">
+            <div class="header">
+                <style>
+                    .header{
+                        font-family: Calibri (Corps);
+                        font-size:15px;
+                    }
+                </style>
+                <table width="100%">
+                    <th width="30%"></th>
+                    <th width="40%"></th>
+                    <th width="30%"></th>
+                    <t t-if="o.operating_unit_id and o.operating_unit_id.bu_store_id.store_id">
+                        <t t-set="store" t-value="o.operating_unit_id.bu_store_id.store_id"/>
+                    </t>
+                    <t t-if="not o.operating_unit_id or not o.operating_unit_id.bu_store_id or not o.operating_unit_id.bu_store_id.store_id">
+                        <t t-set="store" t-value="company"/>
+                    </t>
+                    <tr style="height:40px;"><td colspan="3" class="text-center" width="100%"><span>ENTREPRISE NATIONALE DES INDUSTRIES DE L'ELECTROMENAGER</span></td></tr>
+                    <tr style="height:40px;"><td colspan="3" class="text-center" width="100%"><span t-esc="store.name"></span></td></tr>
+                </table>
+            </div>
+       </template>
+
+        <template id="external_receipt_layout">
+            <!-- Multicompany -->
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+
+            <t t-call="eniem_report.external_receipt_layout_header" />
+            <t t-raw="0" />
+        </template>
+
+    </data>
+</openerp>
