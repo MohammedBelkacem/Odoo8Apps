@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+
+       <record id="view_res_store_otification_form" model="ir.ui.view">
+            <field name="name">res.store</field>
+            <field name="model">res.store</field>
+            <field name="inherit_id" ref="insidjam_multi_store_ou.view_res_store_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook[@colspan='4']" position="after">
+
+
+                  <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread" options='{"thread_level": 1}'/>
+                    </div>
+
+          </xpath>
+            </field>
+        </record>
+
+         <record id="view_operating_unit_notification_form" model="ir.ui.view">
+            <field name="name">operating.unit</field>
+            <field name="model">operating.unit</field>
+            <field name="inherit_id" ref="operating_unit.view_operating_unit_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/*" position="inside">
+
+
+                  <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread" options='{"thread_level": 1}'/>
+                    </div>
+
+          </xpath>
+            </field>
+        </record>
+
+
+       <record id="view_users_notification_form" model="ir.ui.view">
+            <field name="name">res.users</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//form/*" position="inside">
+
+
+                  <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread" options='{"thread_level": 1}'/>
+                    </div>
+
+          </xpath>
+            </field>
+        </record>
+
+
+         </data>
+</openerp>

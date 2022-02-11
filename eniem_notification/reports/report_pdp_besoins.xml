@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+
+<data>
+
+
+    <template id="report_pdp_besoin__document">
+        <t t-call="report.external_layout">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+
+                        <h2 t-field="doc.name"/>
+                        <p>De: <span t-field="doc.start_date"/> A: <span t-field="doc.end_date"/></p>
+
+                        <h3>Liste des produits:</h3>
+
+                <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>Référence</th>
+                        <th>Unité de mesure</th>
+                        <th>Quantité</th>
+                        <th>Nomenclatures</th>
+
+                    </tr>
+               </thead>
+               <tbody class="sale_tbody">
+               <tr t-foreach="doc.line_brut_grouped_ids" t-as="product">
+                        <td>
+                           <span t-field="product.product_id"/>
+                        </td>
+
+                       <td>  <span t-field="product.product_uom_id"/></td>
+                      <td>   <span t-field="product.total_net"/></td>
+
+                    <td t-foreach="product.parent_product_id" t-as="bom"> <div> [<span t-field="bom.default_code"/>]    <span t-field="bom.name"/></div></td>
+
+                  </tr>
+                </tbody>
+            </table>
+
+                       </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <template id="report_pdp_besoin_">
+    <t t-call="report.html_container">
+        <t t-foreach="doc_ids" t-as="doc_id">
+               <t t-raw="translate_doc(doc_id, doc_model, 'create_uid.lang', 'eniem_pdp.report_pdp_besoin__document')"/>
+        </t>
+    </t>
+   </template>
+    <report
+        id="report_pdp_besoin__view"
+        model="pdp"
+        string="Liste des besoins"
+        report_type="qweb-pdf"
+        name="eniem_pdp.report_pdp_besoin_"
+        file="eniem_pdp.report_pdp_besoin_"/>
+
+
+</data>
+
+</openerp>
